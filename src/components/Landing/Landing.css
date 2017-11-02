@@ -152,6 +152,9 @@
     .Footer {
         padding: 0;
     }
+    .Footer .Disclaimer img {
+        position: relative;
+    }
     .LogoWrapper {
         padding: 10px;        
     }
@@ -160,5 +163,18 @@
     }
     .Intro p {
         font-size: 1.1em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Footer, .Intro {
+        position: relative;
+    }
+    .LogoWrapper {
+        justify-content: center;
+        align-items: center;
+    }
+    .LogoWrapper img {
+        margin: 10px 0;
     }
 }
