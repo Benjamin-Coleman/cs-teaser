@@ -24,8 +24,134 @@
 }
 
 .ContentWrapper {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     position: relative;
     height: 100%;
+}
+
+.SplashLogoWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+}
+
+.SplashLogoWrapper img {
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+}
+
+.Footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0 50px;
+}
+
+.LogoWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.LogoWrapper img {
+    width: 150px;
+    height: auto;
+}
+
+.Footer .Disclaimer {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.Footer .Disclaimer img {
+    position: absolute;
+    left: -35px;
+    width: 25px;
+    height: auto;
+    top: calc(50% - 9px);
+}
+
+.Intro {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+}
+
+.Intro img {
+    max-width: 250px;
+    width: 100%;
+    padding: 60px 10px;
+}
+
+.Intro p {
+    font-family: 'Futura';
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}
+
+.Intro .IntroText {
+    padding: 40px 0;
+}
+
+.SplashButton.light {
+    border-radius: 3px;
+    margin: 30px auto;
+    text-transform: uppercase;
+    font-family: 'Futura', sans-serif;
+    font-size: .75em;
+    letter-spacing: 2px;
+    display: block;
+    position: relative;
+    width: 180px;
+    height: 50px;
+    transition: background-color 0.3s ease-in-out;
+    background: transparent;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+}
+
+.SplashButton.light:hover {
+    background-color: rgba(105, 105, 105, 0.5)
+}
+
+.linebreak {
+    display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Footer .Disclaimer {
+        padding: 0 10px;
+    }
+    .Footer {
+        padding: 0;
+    }
+    .LogoWrapper {
+        padding: 10px;        
+    }
+    .linebreak {
+        display: none;
+    }
+    .Intro p {
+        font-size: 1.1em;
+    }
 }
