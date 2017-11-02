@@ -17,6 +17,18 @@ class Form extends Component {
     handleSubmit = e => {
         this.props.toggleFormOff()
         TweenMax.to(this.refs.confirmation, 0.4, {autoAlpha: 1, delay: 0.4, ease: Power2.easeOut})
+
+        // Mock submit form DB call
+        
+        // const url = '/api/v1/contact'
+        // const options = {
+        //     headers: { "Content-Type": "application/json", "Accept": "application/json"},
+        //     method: { "POST"},
+        //     body: JSON.stringify(this.state)
+        // }
+        // fetch(url, options)
+        //     .then(res => res.json())
+        //     .then(json => console.log('This response would really determine the message we send to the user. Current implementation assumes success')
     }
 
     handleAgentChange = e => {
