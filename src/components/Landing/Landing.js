@@ -31,6 +31,7 @@ class Landing extends Component {
     }
 
     handleContactUsClick = () => {
+        window.scrollTo(0, 0)
         TweenMax.to(this.refs.intro, 0.4, {autoAlpha: 0, ease: Power2.easeOut})
         // Animating the form in could of course be done the same way
         // but going with React Transition for variety
@@ -52,7 +53,7 @@ class Landing extends Component {
         return (
             <div className='LandingWrapper'>
                 <div className='VideoWrapper'>
-                    <video src="/assets/videos/landing.mp4" loop="loop" autoPlay="autoPlay" poster="/assets/img/poster.jpg">
+                    <video src="/assets/videos/landing.mp4" playsinline loop="loop" autoPlay="autoPlay" poster="/assets/img/poster.jpg">
                     </video>
                 </div>
                 <div className='ContentWrapper'>
