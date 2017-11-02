@@ -15,11 +15,12 @@ class Form extends Component {
     }
 
     handleSubmit = e => {
+        window.scrollTo(0, 0)
         this.props.toggleFormOff()
         TweenMax.to(this.refs.confirmation, 0.4, {autoAlpha: 1, delay: 0.4, ease: Power2.easeOut})
 
         // Mock submit form DB call
-        
+
         // const url = '/api/v1/contact'
         // const options = {
         //     headers: { "Content-Type": "application/json", "Accept": "application/json"},
