@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import './Landing.css'
 import { TimelineMax, TweenMax, Power2 } from 'gsap'
+import { Transition } from 'react-transition-group'
 
-// import Footer from './Footer'
-// import SplashLogo from './SplashLogo'
 import Form from './Form'
 
 class Landing extends Component {
@@ -32,17 +31,24 @@ class Landing extends Component {
     }
 
     handleContactUsClick = () => {
-        // open form
-        this.setState({ formOpen: true })
         TweenMax.to(this.refs.intro, 0.4, {autoAlpha: 0, ease: Power2.easeOut})
-        TweenMax.to(this.refs.form, 0.4, {autoAlpha: 1, delay: 0.4, ease: Power2.easeIn})
+        // Animating the form in could of course be done the same way
+        // but going with React Transition for variety
+        this.setState({ formOpen: true })
+    }
+
+    toggleFormOff = () => {
+        this.setState({ formOpen: false })
     }
 
     handleSubmit = () => {
         console.log('Form submitted')
     }
-
+    
     render() {
+        //Form animation duration
+        const duration = 300;
+
         return (
             <div className='LandingWrapper'>
                 <div className='VideoWrapper'>
@@ -63,8 +69,12 @@ class Landing extends Component {
                                 <span>Contact Us</span>
                             </div>
                         </div>
-                    <Form formOpen={this.state.formOpen}/>
                     </div>
+                        <Transition in={this.state.formOpen} timeout={duration} mountOnEnter={true}>
+                            {(status) => (
+                                <Form className={`fade fade-${status}`} toggleFormOff={this.toggleFormOff}/>
+                            )}
+                        </Transition>
                     <div ref='footer' className='Footer'>
                         <div className='LogoWrapper'>
                             <img src='/assets/img/ISG-LOGO.png' alt='isg-logo'/>

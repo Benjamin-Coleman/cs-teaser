@@ -4,7 +4,14 @@
     left: 0;
     top: 10%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(0, 0, 0, 0.5);
+    transition: 300ms opacity ease-in-out;
+    opacity: 0;
+    z-index: 0;
+}
+
+.FormWrapper .SplashButton {
+    margin: 50px auto 70px auto;
 }
 
 .FormHeader {
@@ -12,13 +19,13 @@
 }
 
 .FormHeader img {
-    width: 30px;
+    width: 38px;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-.FormHeader h2 {
+.FormHeader h2, .ConfirmationContent h2 {
     font-weight: 300;
     font-family: 'Futura', sans-serif;
     font-size: 1.9em;
@@ -88,4 +95,62 @@
     text-transform: uppercase;
     color: #222;
     resize: none;
+}
+
+/* Class names added by RTG */
+
+.FormWrapper.fade.fade-entering {
+    opacity: 0;
+}
+
+.FormWrapper.fade.fade-entered {
+    opacity: 1;
+}
+
+.FormWrapper.fade.fade-exiting {
+    opacity: 1;
+}
+
+.FormWrapper.fade.fade-exited {
+    opacity: 0;
+}
+
+.ConfirmationWrapper {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 300ms opacity ease-in-out;
+    opacity: 0;
+    z-index: 0;
+    opacity: 0;
+}
+
+.ConfirmationContent p {
+    font-family: 'Futura', sans-serif;
+    font-size: 1em;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.ConfirmationContent {
+    text-align: center;
+    padding: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+    .ContactForm {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ContactForm > div {
+        width: 100%;
+        margin: 5px;
+    }
+    .FormWrapper .SplashButton {
+        margin: 10px auto 10px auto;
+    }
 }
