@@ -53,7 +53,7 @@ class Landing extends Component {
         return (
             <div className='LandingWrapper'>
                 <div className='VideoWrapper'>
-                    <video src="/assets/videos/landing.mp4" playsinline loop="loop" autoPlay="autoPlay" poster="/assets/img/poster.jpg">
+                    <video src="/assets/videos/landing.mp4" playsInline loop="loop" autoPlay="autoPlay" poster="/assets/img/poster.jpg">
                     </video>
                 </div>
                 <div className='ContentWrapper'>
